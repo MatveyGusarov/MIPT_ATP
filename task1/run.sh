@@ -30,10 +30,10 @@ done
 
 extension="."$extension
 
-rm -rf $backfolder
+#rm -rf $backfolder
 mkdir $backfolder
 find $input -name "*$extension" -exec cp {} $backfolder/* \;
 tar -czf $backarch $backfolder
-rm -rf $backfolder
+
 echo "done"
 
