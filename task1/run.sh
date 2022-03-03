@@ -32,12 +32,8 @@ extension="."$extension
 
 rm -rf $backfolder
 mkdir $backfolder
-#cp -r *$extension $backfolder
-find $input -name "*$extension" -exec cp {} $backfolder \;
-#find $input -name "*$extension" -exec cp {} $backfolder/ \ >> fff.txt;
-
-#tar -czvf file.tar.gz /full/path/*
-tar -czvf $backarch $backfolder
+find $input -name "*$extension" -exec cp {} $backfolder/* \;
+tar -czf $backarch $backfolder
 rm -rf $backfolder
-echo "done"
+echo "donei"
 
