@@ -29,10 +29,7 @@ shift
 done
 
 extension="."$extension
-
-#rm -rf $backfolder
 mkdir $backfolder
-#find 2> /dev/null $input -name "*$extension" -exec cp {} $backfolder/ \;
 counter=0
 for i in $(find 2> /dev/null $input -name "*$extension")
 do
@@ -42,6 +39,6 @@ cp $i $backfolder/$newName
 counter=$((counter + 1))
 done
 tar -czf $backarch $backfolder
-#rm -rf $backfolder
+
 echo "done"
 
