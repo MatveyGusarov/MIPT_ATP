@@ -2,5 +2,5 @@
 #include "main.h"
 
 int main() {
-    std::cout << isOk(isOk(true));
+    std::cout << isNormal(Invert(false));
 }

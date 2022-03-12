@@ -3,11 +3,11 @@
 #include "gtest/gtest.h"
 
 TEST(ok,test1) {
-    EXPECT_EQ(false, OK(true)); 
+    EXPECT_EQ(false, Invert(true)); 
 }
 
 TEST(less,test1) {
-    EXPECT_EQ(false, isOk(true));
+    EXPECT_EQ(true, isNormal(true));
 }
 
 int main(int argc, char *argv[]) {
