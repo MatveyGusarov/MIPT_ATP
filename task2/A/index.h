@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-bool isOk(bool b) {
+bool Invert(bool b) {
 	return !b;
 }

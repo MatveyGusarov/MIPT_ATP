@@ -1,1 +1,1 @@
-bool isOk(bool b);
+bool isNormal(bool b);
