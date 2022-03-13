@@ -10,12 +10,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 set_target_properties(library PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 
-add_executable(C C/main.cpp C/main.h A/index.h)
+add_executable(C C/main.cpp)
 target_link_libraries(C library)
 
-add_executable(Google_Tests C/test.cpp)
-target_link_libraries(Google_Tests ${GTEST_LIBRARIES} Threads::Threads)
-target_link_libraries(Google_Tests library)
+add_executable(GTest C/test.cpp)
+target_link_libraries(GTest ${GTEST_LIBRARIES} Threads::Threads)
+target_link_libraries(GTest library)
 
 add_custom_target(
     running_target ALL
