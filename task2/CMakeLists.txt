@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.0) #
 find_package(GTest QUIET)
 
 add_subdirectory(B)
-include_directories(A)
-include_directories(C)
+include_directories(.)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -14,7 +13,7 @@ set_target_properties(library PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE
 add_executable(C C/main.cpp)
 target_link_libraries(C library)
 
-add_executable(GTest C/test.cpp)
+add_executable(GTest C/main_test.cpp)
 target_link_libraries(GTest ${GTEST_LIBRARIES} Threads::Threads)
 target_link_libraries(GTest library)
 
