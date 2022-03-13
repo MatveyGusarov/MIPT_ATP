@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-find_package(GTest QUIET)
+find_package(GTest REQUIRED)
 
 add_subdirectory(B)
 include_directories(.)
@@ -12,9 +12,9 @@ set_target_properties(library PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE
 add_executable(C C/main.cpp C/main.h A/index.h)
 target_link_libraries(C library)
 
-add_executable(GTest C/main_test.cpp)
-target_link_libraries(GTest ${GTEST_LIBRARIES} Threads::Threads)
-target_link_libraries(GTest library)
+add_executable(CTest C/main_test.cpp)
+target_link_libraries(CTest ${GTEST_LIBRARIES} Threads::Threads)
+target_link_libraries(CTest library)
 
 add_custom_target(
     running_target ALL
