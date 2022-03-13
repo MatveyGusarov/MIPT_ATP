@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.0) #
 find_package(GTest QUIET)
 
 add_subdirectory(B)
-include_directories(.)
+include_directories(A)
+include_directories(C)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
