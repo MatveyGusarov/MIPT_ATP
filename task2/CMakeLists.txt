@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0) #
 find_package(GTest QUIET)
 
 add_subdirectory(B)
-target_include_directories(.)
-target_include_directories(${GTEST_INCLUDE_DIRS})
+include_directories(.)
+include_directories(${GTEST_INCLUDE_DIRS})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
