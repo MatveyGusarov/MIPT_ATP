@@ -1,1 +1,3 @@
-index = open('index.h', 'x')
+index = open('index.h', 'wx')
+index.write("void f();")
+index.close()
