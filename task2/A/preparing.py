@@ -1,3 +1,6 @@
+#pragma once
+
 index = open('index.h', 'wx')
-index.write("void f();")
+index.write('//  My comment \n')
+index.write('//  here could be my code \n')
 index.close()
