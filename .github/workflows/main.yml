@@ -1,10 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ task6 ]
   pull_request:
@@ -22,9 +18,15 @@ jobs:
           cd task6/task-ci/B
           git submodule add https://github.com/google/googletest ../3rdparty
           cmake .. && make
-        
-      - name: G
+      - name: F 
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+        with:
+          exec-path: bin/CTestExe
+          report-path: report.xml
+          working-directory: task6/task-ci
+        
+      - name: Artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: Distributive
           path: |
