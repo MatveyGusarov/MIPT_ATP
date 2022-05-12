@@ -22,4 +22,9 @@ def test_all():
 
     assert weather.find_diff_two_cities('Barcelona', 'Astana') > 0
     assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by 6 degrees'
+    
+class WeatherTests(unittest.TestCase):
+    def test_get_response_city(self):
+        request.get(BASE_URL, status_code=404)
+        self.assertRaises(AttributeError, weather.get_response_city, 'Abracadabracity', BASE_URL)
                                                                                                                         
