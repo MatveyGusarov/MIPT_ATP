@@ -10,7 +10,7 @@ weather = WeatherWrapper(KEY)
 
 def test_response_city():
     request.get(BASE_URL, status_code=404)
-    assertRaises(AttributeError, weather.get_response_city, 'Abracadabracity', BASE_URL)
+    unittest.TestCase.assertRaises(AttributeError, weather.get_response_city, 'Abracadabracity', BASE_URL)
 
 def test_all():       
     request.get(BASE_URL, status_code=200, json={'main': {'temp': 0}})
@@ -24,5 +24,5 @@ def test_all():
     request.get(FORECAST_URL, status_code=200, json={"list": [{'main': {'temp': -2}}] * 8})
 
     assert weather.find_diff_two_cities('Barcelona', 'Astana') > 0
-    assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by 5 degrees'
+    assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by 6 degrees'
                                                                                                                         
