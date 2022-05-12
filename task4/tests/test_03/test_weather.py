@@ -10,7 +10,7 @@ def test_all():
     request.get(BASE_URL, status_code=200, json={'main': {'temp': 0}})
     request.get(FORECAST_URL, status_code=200, json={'list': [{'main': {'temp': 0}}] * 8})
 
-    assert weather.get_tomorrow_diff('Barcelona') == 'The weather in Barcelona tomorrow will be the same than today'
+    assert weather.get_tomorrow_diff('Barcelona') == 'The weather in Barcelona tomorrow will be warmer than today'
 
     request.get(FORECAST_URL, status_code=200, json={'list': [{'main': {'temp': 2}}] * 8})
     assert weather.get_tomorrow_diff('Tomsk') == 'The weather in Tomsk tomorrow will be warmer than today'
