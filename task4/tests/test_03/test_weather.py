@@ -1,3 +1,4 @@
+import unittest
 from requests_mock import Mocker
 from weather_03.weather_wrapper import BASE_URL, FORECAST_URL, WeatherWrapper
 
