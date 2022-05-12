@@ -1,4 +1,5 @@
 import unittest
+import pytest
 from requests_mock import Mocker
 from weather_03.weather_wrapper import BASE_URL, FORECAST_URL, WeatherWrapper
 
@@ -22,5 +23,5 @@ def test_all():
     assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by 5 degrees'
     
     request.get(BASE_URL, status_code=404)
-    assertRaises(AttributeError, weather.get_response_city, 'Abracadabracity', BASE_URL)
+    unittest.TestCase.assertRaises(AttributeError, weather.get_response_city, 'Abracadabracity', BASE_URL)
                                                                                                                         
