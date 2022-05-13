@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: 
+      - task6
+      - master
+  pull_request:
+    branches: 
+      - master
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preparing
+        uses: actions/checkout@v1
+        
+      - name: Build
+        run: |
+          cd task6/task-ci/B
+          git submodule add https://github.com/google/googletest ../3rdparty
+          cmake ..
+          make
+        
+      - name: Test
+        uses: akhtyamovpavel/ActionGtestReport@v0.0.9
+        with:
+          exec-path: bin/CTestExe
+          working-directory: task6/task-ci
+          report-path: report.xml
+          
+      - name: UploadArtifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Distributive
+          path: |
+            task6/task-ci/bin
+            task6/task-ci/lib
