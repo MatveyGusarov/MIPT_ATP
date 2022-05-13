@@ -22,6 +22,6 @@ def test_all(requests_mock):
     assert weather.get_tomorrow_diff('Kiev') == 'The weather in Kiev tomorrow will be colder than today'
 
     assert weather.find_diff_two_cities('Barcelona', 'Astana') >= 0
-    assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by  degrees'
+    assert weather.get_diff_string('Barcelona', 'Astana') == 'Weather in Barcelona is warmer than in Astana by 0 degrees'
     with pytest.raises(AttributeError) as e_info:
     	weather_forecast.get("NotExistedCity", FORECAST_URL)	
