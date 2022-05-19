@@ -42,7 +42,7 @@ class WeatherWrapper:
         if diff < 0:
             status = 'colder'
             temperature_diff = -diff
-        else:
+        else: 		 	
             status = 'warmer'
             temperature_diff = diff
 
